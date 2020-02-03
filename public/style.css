@@ -1,0 +1,24 @@
+body{
+    background-color: lightgray;
+}
+
+header{
+    background-color: lightgreen;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #0066ff;
+    color: white;
+    text-align: center;
+  }
+h1{
+    text-align: center;
+}
+
+.carousel{
+    width:400px;
+    margin: auto;
+}
