@@ -2,15 +2,16 @@ body{
     background-color: lightgray;
 }
 
-header{
-    background-color: lightgreen;
+
+#nav{
+    background-color: coral;
 }
 footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #0066ff;
+    background-color: coral;
     color: white;
     text-align: center;
   }
