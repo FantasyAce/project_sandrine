@@ -1,5 +1,6 @@
 body{
     background-color: lightgray;
+    
 }
 
 
@@ -22,4 +23,8 @@ h1{
 .carousel{
     width:800px;
     margin: auto;
+}
+#photomont{
+    height:750px;
+    width:550;
 }
