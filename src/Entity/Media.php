@@ -31,11 +31,12 @@ class Media
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="media_images", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="media_image", fileNameProperty="image")
      * @var File
      */
     private $imageFile;

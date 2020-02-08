@@ -3,4 +3,16 @@ easy_admin:
        # List the entity class name you want to manage
        - App\Entity\SuperUser
        - App\Entity\Media
+        # Media:
+        #     list:
+        #         fields:
+        #             - {property: 'image' , type: 'image', base_path: '%app.path.media_image%'}
+        #     show:
+        #         fields:
+        #             - {property: 'image' , type: 'image', base_path: '%app.path.media_image%'}
        - App\Entity\Article
+    
+        design:
+            form_theme:
+                - '@EasyAdmin/form/bootstrap_4.html.twig'
+                - '@VichUploader/Form/fields.html.twig'
