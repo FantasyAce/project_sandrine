@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\File as File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
@@ -72,7 +72,7 @@ class Media
     }
 
 
-    public function setImageFile(File $image = null)
+    public function setImageFile(?File $image = null)
     {
         $this->imageFile = $image;
 
@@ -81,11 +81,11 @@ class Media
         // otherwise the event listeners won't be called and the file is lost
         if ($image) {
             // if 'updatedAt' is not defined in your entity, use another property
-            $this->updatedAt = new \DateTime('now');
+            $this->AddedAt = new \DateTimeImmutable;
         }
     }
 
-    public function getImageFile()
+    public function getImageFile():? File
     {
         return $this->imageFile;
     }

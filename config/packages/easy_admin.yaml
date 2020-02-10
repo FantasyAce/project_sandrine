@@ -1,18 +1,27 @@
 easy_admin:
+    
     entities:
        # List the entity class name you want to manage
-        SuperUser:
-            class: App\Entity\SuperUser
+       
         Media:
-            class: App\Entity\Media
+            class: "App\\Entity\\Media"
             list:
+                actions: ['show']
                 fields:
-                    - { property: 'image' , type: 'image', base_path: '%app.path.media_image%' } -
+                    - id
+                    - name
+                    - AddedAt
+                    - { property: 'image' , type: 'image', base_path: '%app.path.media_image%'}
+                    
             show:
                 fields:
-                    - { property: 'image' , type: 'image', base_path: '%app.path.media_image%' } -
+                    - { property: 'image' , type: 'image', base_path: '%app.path.media_image%' }
+            form: 
+                fields:
+                    - name
+                    - { property: 'imageFile', type: 'vich_image'}
         Article: 
-            class: App\Entity\Article
+            class: "App\\Entity\\Article"
            
     
         # design:
