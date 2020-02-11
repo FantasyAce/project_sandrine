@@ -26,9 +26,9 @@ class HomeController extends AbstractController
 
     public function presentation(MediaRepository $mr)
     {
-        $image = $mr->find(3);
+        $image = $mr->findById(3);
         return $this->render('presentation/presentation.html.twig', [
-            'controller_name' => 'HomeController',
+            'imagePresentation' => $image,
         ]);
     }
 

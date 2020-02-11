@@ -22,8 +22,11 @@ h1{
 }
 
 .carousel{
+   
     width:800px;
+    height: 550px !important;
     margin: auto;
+    overflow: hidden;
 }
 #photomont{
     height:750px;
