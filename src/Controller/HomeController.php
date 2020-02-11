@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\MediaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -11,10 +12,11 @@ class HomeController extends AbstractController
     /**
      * @Route("/home", name="home")
      */
-    public function index()
+    public function index(MediaRepository $mr)
     {
+        $carouselList = $mr->findBy(['isInCarousel' => true], ['placeCarousel' => 'ASC']);
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+            'carouselImages' => $carouselList,
         ]);
     }
 
@@ -22,8 +24,9 @@ class HomeController extends AbstractController
      * @Route("/presentation", name="presentation")
      */
 
-    public function presentation()
+    public function presentation(MediaRepository $mr)
     {
+        $image = $mr->find(3);
         return $this->render('presentation/presentation.html.twig', [
             'controller_name' => 'HomeController',
         ]);

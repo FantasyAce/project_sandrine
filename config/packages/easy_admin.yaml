@@ -12,6 +12,8 @@ easy_admin:
                     - id
                     - name
                     - AddedAt
+                    - { property: 'isInCarousel', label: 'Carousel'}
+                    - placeCarousel
                     - { property: 'image' , type: 'image', base_path: '%app.path.media_image%'}
                     
             show:
@@ -21,6 +23,8 @@ easy_admin:
                 fields:
                     - name
                     - { property: 'imageFile', type: 'vich_image'}
+                    - { property: 'isInCarousel', label: 'Carousel'}
+                    - placeCarousel
         Article: 
             class: "App\\Entity\\Article"
            

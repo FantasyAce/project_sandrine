@@ -41,6 +41,16 @@ class Media
      */
     private $imageFile;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isInCarousel;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $placeCarousel;
+
 
     public function getId(): ?int
     {
@@ -98,5 +108,29 @@ class Media
     public function getImage()
     {
         return $this->image;
+    }
+
+    public function getIsInCarousel(): ?bool
+    {
+        return $this->isInCarousel;
+    }
+
+    public function setIsInCarousel(?bool $isInCarousel): self
+    {
+        $this->isInCarousel = $isInCarousel;
+
+        return $this;
+    }
+
+    public function getPlaceCarousel(): ?int
+    {
+        return $this->placeCarousel;
+    }
+
+    public function setPlaceCarousel(?int $placeCarousel): self
+    {
+        $this->placeCarousel = $placeCarousel;
+
+        return $this;
     }
 }
