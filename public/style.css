@@ -18,6 +18,7 @@ footer {
   }
 h1{
     text-align: center;
+    text-decoration: underline;
 }
 
 .carousel{
@@ -30,4 +31,7 @@ h1{
 }
 .cv{
     font-weight: 550;
+}
+#service{
+    margin-top: 35px;
 }

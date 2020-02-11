@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact!{% endblock %}
+
+{% block body%}
+
+<h1>Envoyez un Petit Message!</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            {{ form_start(our_form)}}
+            {{ form_widget(our_form)}}
+            
+            <input type="submit" value="Envoyer" class="btn btn-success btn-block">
+        
+            {{ form_end(our_form)}}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
