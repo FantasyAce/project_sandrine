@@ -51,6 +51,11 @@ class Media
      */
     private $placeCarousel;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $isInGallery;
+
 
     public function getId(): ?int
     {
@@ -130,6 +135,18 @@ class Media
     public function setPlaceCarousel(?int $placeCarousel): self
     {
         $this->placeCarousel = $placeCarousel;
+
+        return $this;
+    }
+
+    public function getIsInGallery(): ?bool
+    {
+        return $this->isInGallery;
+    }
+
+    public function setIsInGallery(?bool $isInGallery): self
+    {
+        $this->isInGallery = $isInGallery;
 
         return $this;
     }

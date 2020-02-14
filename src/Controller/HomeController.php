@@ -26,7 +26,8 @@ class HomeController extends AbstractController
 
     public function presentation(MediaRepository $mr)
     {
-        $image = $mr->findById(3);
+        
+        $image = $mr->find(2); 
         return $this->render('presentation/presentation.html.twig', [
             'imagePresentation' => $image,
         ]);
@@ -40,6 +41,18 @@ class HomeController extends AbstractController
     {
         return $this->render('services/services.html.twig', [
             'controller_name' => 'HomeController'
+        ]);
+    }
+    /**
+     * @Route("/gallery", name="gallery")
+     */
+
+    public function gallery(MediaRepository $mr)
+
+    {
+       $galleryList = $mr->findBy(['isInGallery' => true]);
+        return $this->render('gallery/gallery.html.twig', [
+            'galleryImages' => $galleryList,
         ]);
     }
     

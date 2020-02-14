@@ -12,6 +12,7 @@ easy_admin:
                     - id
                     - name
                     - AddedAt
+                    - { property: 'isInGallery', label: 'Gallery'}
                     - { property: 'isInCarousel', label: 'Carousel'}
                     - placeCarousel
                     - { property: 'image' , type: 'image', base_path: '%app.path.media_image%'}
@@ -23,6 +24,7 @@ easy_admin:
                 fields:
                     - name
                     - { property: 'imageFile', type: 'vich_image'}
+                    - { property: 'isInGallery', label: 'Gallery'}
                     - { property: 'isInCarousel', label: 'Carousel'}
                     - placeCarousel
         Article: 
