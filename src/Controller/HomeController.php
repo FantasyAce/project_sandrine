@@ -18,6 +18,12 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'carouselImages' => $carouselList,
         ]);
+
+        $textPresentation = $mr->find(2);
+        return $this->render('home/index.html.twig', [
+            'textPresentation' => $textPresentation
+        ]);
+    
     }
 
     /**

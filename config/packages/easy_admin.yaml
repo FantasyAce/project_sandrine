@@ -2,8 +2,7 @@ easy_admin:
     
     entities:
        # List the entity class name you want to manage
-        SuperUser:
-            class: "App\\Entity\\SuperUser"
+       
         Media:
             class: "App\\Entity\\Media"
             list:
@@ -27,13 +26,12 @@ easy_admin:
                     - { property: 'isInGallery', label: 'Gallery'}
                     - { property: 'isInCarousel', label: 'Carousel'}
                     - placeCarousel
-        Article: 
-            class: "App\\Entity\\Article"
+        
            
-    
-        # design:
-        #     form_theme:
-        #         - '@EasyAdmin/form/bootstrap_4.html.twig'
-        #         - '@VichUploader/Form/fields.html.twig'
+
+    # design:
+    #     form_theme:
+    #         - '@EasyAdmin/form/bootstrap_4.html.twig'
+    #         - '@VichUploader/Form/fields.html.twig'
 
         # config/packages/easy_admin.yaml

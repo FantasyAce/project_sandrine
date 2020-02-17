@@ -29,6 +29,7 @@ h1{
     overflow: hidden;
 }
 #photomont{
+    margin-top:50px ;
     height:750px;
     width:550;
 }
@@ -37,4 +38,13 @@ h1{
 }
 #service{
     margin-top: 35px;
+}
+#presentation{
+    margin-top: 50px;
+}
+
+#photo_gallery{
+    max-width: fit-content;
+    max-height: fit-content;
+    
 }
