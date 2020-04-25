@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ArticleRepository;
 use App\Repository\MediaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,14 +13,21 @@ class HomeController extends AbstractController
     /**
      * @Route("/home", name="home")
      */
-    public function index(MediaRepository $mr)
+    public function index(MediaRepository $mr, ArticleRepository $ar)
     {
         $carouselList = $mr->findBy(['isInCarousel' => true], ['placeCarousel' => 'ASC']);
         return $this->render('home/index.html.twig', [
             'carouselImages' => $carouselList,
         ]);
 
-        $textPresentation = $mr->find(2);
+        $textPresentation = $ar->find(3);
+
+            if(!$textPresentation){
+                throw $this->createNotFoundException(
+                    "c'est vide connard"
+                );
+            } 
+
         return $this->render('home/index.html.twig', [
             'textPresentation' => $textPresentation
         ]);

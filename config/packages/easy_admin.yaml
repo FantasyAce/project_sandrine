@@ -3,6 +3,20 @@ easy_admin:
     entities:
        # List the entity class name you want to manage
        
+        Article:
+            class: "App\\Entity\\Article"
+            list:
+                actions: ['show']
+                fields:
+                    - id
+                    - title
+                    - content
+                    - AddedAt
+            form:
+                fields:
+                    - title
+                    - content
+
         Media:
             class: "App\\Entity\\Media"
             list:
