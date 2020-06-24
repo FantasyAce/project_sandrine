@@ -20,17 +20,19 @@ class HomeController extends AbstractController
             'carouselImages' => $carouselList,
         ]);
 
-        $textPresentation = $ar->find(3);
+        $textTest = $ar->find(5);
 
-            if(!$textPresentation){
+            if(!$textTest){
                 throw $this->createNotFoundException(
-                    "c'est vide connard"
+                    "c'est vide "
                 );
-            } 
+            }else{
 
-        return $this->render('home/index.html.twig', [
-            'textPresentation' => $textPresentation
-        ]);
+                return $this->render('home/index.html.twig', [
+                'textTest' => $textTest,
+                ]);
+            }
+            
     
     }
 
