@@ -4,14 +4,15 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Form\ContactType; 
+use App\Form\ContactType;
+use Symfony\Component\BrowserKit\Request;
 
 class ContactController extends AbstractController
 {
     /**
      * @Route("/contact", name="contact")
      */
-    public function index()
+    public function index(Request $request)
     {
        $form = $this->createForm(ContactType::class);
 
