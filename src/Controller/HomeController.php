@@ -13,14 +13,16 @@ class HomeController extends AbstractController
     /**
      * @Route("/home", name="home")
      */
-    public function index(MediaRepository $mr, ArticleRepository $ar)
+    public function index(MediaRepository $mr)
     {
         $carouselList = $mr->findBy(['isInCarousel' => true], ['placeCarousel' => 'ASC']);
         return $this->render('home/index.html.twig', [
             'carouselImages' => $carouselList,
         ]);
 
-        $textTest = $ar->find(5);
+       $articleRepository = $this->getDoctrine()->getRepository(Article::class);
+
+       $textTest = $articleRepository->find(5);
 
             if(!$textTest){
                 throw $this->createNotFoundException(

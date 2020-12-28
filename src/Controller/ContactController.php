@@ -12,7 +12,7 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(Request $request)
+    public function index()
     {
        $form = $this->createForm(ContactType::class);
 
